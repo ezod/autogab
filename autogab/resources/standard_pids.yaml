@@ -1,0 +1,125 @@
+engine_load:
+      description:  'Calculated Engine Load Value'
+      mode:         '01'
+      pid:          '04'
+      bytes:        1
+      range:        [0.0, 100.0]
+      unit:         '%'
+      formula:      'lambda a: (a * 100) / 255.0'
+
+coolant_temp:
+    description:  'Engine Coolant Temperature'
+    mode:         '01'
+    pid:          '05'
+    bytes:        1
+    range:        [-40, 215]
+    unit:         'deg. C'
+    formula:      'lambda a: a - 40'
+
+st_fuel_b1:
+    description:  'Short Term Fuel % Trim - Bank 1'
+    mode:         '01'
+    pid:          '06'
+    bytes:        1
+    range:        [-100.0, 99.22]
+    unit:         '%'
+    formula:      'lambda a: (a - 128) * 100.0 / 128.0'
+
+lt_fuel_b1:
+    description:  'Long Term Term Fuel % Trim - Bank 1'
+    mode:         '01'
+    pid:          '07'
+    bytes:        1
+    range:        [-100.0, 99.22]
+    unit:         '%'
+    formula:      'lambda a: (a - 128) * 100.0 / 128.0'
+
+st_fuel_b2:
+    description:  'Short Term Fuel % Trim - Bank 2'
+    mode:         '01'
+    pid:          '08'
+    bytes:        1
+    range:        [-100.0, 99.22]
+    unit:         '%'
+    formula:      'lambda a: (a - 128) * 100.0 / 128.0'
+
+lt_fuel_b2:
+    description:  'Long Term Fuel % Trim - Bank 2'
+    mode:         '01'
+    pid:          '09'
+    bytes:        1
+    range:        [-100.0, 99.22]
+    unit:         '%'
+    formula:      'lambda a: (a - 128) * 100.0 / 128.0'
+
+fuel_pressure:
+    description:  'Fuel Pressure'
+    mode:         '01'
+    pid:          '0A'
+    bytes:        1
+    range:        [0, 765]
+    unit:         'kPa (gauge)'
+    formula:      'lambda a: a * 3'
+
+intake_manifold_pressure:
+    description:  'Intake Manifold Absolute Pressure'
+    mode:         '01'
+    pid:          '0B'
+    bytes:        1
+    range:        [0, 255]
+    unit:         'kPa (absolute)'
+    formula:      'lambda a: a'
+
+engine_rpm:
+    description:  'Engine RPM'
+    mode:         '01'
+    pid:          '0C'
+    bytes:        2
+    range:        [0.0, 16383.75]
+    unit:         'rpm'
+    formula:      'lambda a, b: ((a * 256) + b) / 4.0'
+
+vehicle_speed:
+    description:  'Vehicle Speed'
+    mode:         '01'
+    pid:          '0D'
+    bytes:        1
+    range:        [0, 255]
+    unit:         'km/h'
+    formula:      'lambda a: a'
+
+timing_advance:
+    description:  'Timing Advance'
+    mode:         '01'
+    pid:          '0E'
+    bytes:        1
+    range:        [-64.0, -63.5]
+    unit:         'deg. relative to #1 cylinder'
+    formula:      'lambda a: (a / 2.0) - 64.0'
+
+intake_air_temp:
+    description:  'Intake Air Temperature'
+    mode:         '01'
+    pid:          '0F'
+    bytes:        1
+    range:        [-40, 215]
+    unit:         'deg. C'
+    formula:      'lambda a: a - 40'
+
+maf_air_flow_rate:
+    description:  'MAF Air Flow Rate'
+    mode:         '01'
+    pid:          '10'
+    bytes:        2
+    range:        [0, 655.35]
+    unit:         'g/s'
+    formula:      'lambda a, b: ((a * 256) + b) / 100.0'
+
+throttle_pos:
+    description:  'Throttle Position'
+    mode:         '01'
+    pid:          '11'
+    bytes:        1
+    range:        [0.0, 100.0]
+    unit:         '%'
+    formula:      'lambda a: (a * 100) / 255.0'
