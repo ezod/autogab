@@ -16,7 +16,7 @@ from autogab.obd import OBDConnectionContext
 def tachometer(self, device='/dev/ttyUSB0'):
     with OBDConnectionContext(device=device) as obd:
         while(True):
-            yield obd.send_pid('engine_rpm')
+            yield obd.request_value('engine_rpm')
 
 
 def main(device):

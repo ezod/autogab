@@ -3,6 +3,7 @@ engine_load:
     mode:           '01'
     pid:            '04'
     bytes:          1
+    lines:          1
     range:          [0.0, 100.0]
     unit:           '%'
     formula:        'lambda a: (a * 100) / 255.0'
@@ -12,6 +13,7 @@ coolant_temp:
     mode:           '01'
     pid:            '05'
     bytes:          1
+    lines:          1
     range:          [-40, 215]
     unit:           'deg. C'
     formula:        'lambda a: a - 40'
@@ -21,6 +23,7 @@ st_fuel_b1:
     mode:           '01'
     pid:            '06'
     bytes:          1
+    lines:          1
     range:          [-100.0, 99.22]
     unit:           '%'
     formula:        'lambda a: (a - 128) * 100.0 / 128.0'
@@ -30,6 +33,7 @@ lt_fuel_b1:
     mode:           '01'
     pid:            '07'
     bytes:          1
+    lines:          1
     range:          [-100.0, 99.22]
     unit:           '%'
     formula:        'lambda a: (a - 128) * 100.0 / 128.0'
@@ -39,6 +43,7 @@ st_fuel_b2:
     mode:           '01'
     pid:            '08'
     bytes:          1
+    lines:          1
     range:          [-100.0, 99.22]
     unit:           '%'
     formula:        'lambda a: (a - 128) * 100.0 / 128.0'
@@ -48,6 +53,7 @@ lt_fuel_b2:
     mode:           '01'
     pid:            '09'
     bytes:          1
+    lines:          1
     range:          [-100.0, 99.22]
     unit:           '%'
     formula:        'lambda a: (a - 128) * 100.0 / 128.0'
@@ -57,6 +63,7 @@ fuel_pressure:
     mode:           '01'
     pid:            '0A'
     bytes:          1
+    lines:          1
     range:          [0, 765]
     unit:           'kPa (gauge)'
     formula:        'lambda a: a * 3'
@@ -66,6 +73,7 @@ intake_manifold_pressure:
     mode:           '01'
     pid:            '0B'
     bytes:          1
+    lines:          1
     range:          [0, 255]
     unit:           'kPa (absolute)'
     formula:        'lambda a: a'
@@ -75,6 +83,7 @@ engine_rpm:
     mode:           '01'
     pid:            '0C'
     bytes:          2
+    lines:          1
     range:          [0.0, 16383.75]
     unit:           'rpm'
     formula:        'lambda a, b: ((a * 256) + b) / 4.0'
@@ -84,6 +93,7 @@ vehicle_speed:
     mode:           '01'
     pid:            '0D'
     bytes:          1
+    lines:          1
     range:          [0, 255]
     unit:           'km/h'
     formula:        'lambda a: a'
@@ -93,6 +103,7 @@ timing_advance:
     mode:           '01'
     pid:            '0E'
     bytes:          1
+    lines:          1
     range:          [-64.0, -63.5]
     unit:           'deg. relative to #1 cylinder'
     formula:        'lambda a: (a / 2.0) - 64.0'
@@ -102,6 +113,7 @@ intake_air_temp:
     mode:           '01'
     pid:            '0F'
     bytes:          1
+    lines:          1
     range:          [-40, 215]
     unit:           'deg. C'
     formula:        'lambda a: a - 40'
@@ -111,6 +123,7 @@ maf_air_flow_rate:
     mode:           '01'
     pid:            '10'
     bytes:          2
+    lines:          1
     range:          [0, 655.35]
     unit:           'g/s'
     formula:        'lambda a, b: ((a * 256) + b) / 100.0'
@@ -120,6 +133,7 @@ throttle_pos:
     mode:           '01'
     pid:            '11'
     bytes:          1
+    lines:          1
     range:          [0.0, 100.0]
     unit:           '%'
     formula:        'lambda a: (a * 100) / 255.0'
@@ -129,6 +143,7 @@ run_time_since_start:
     mode:           '01'
     pid:            '1F'
     bytes:          2
+    lines:          1
     range:          [0, 65535]
     unit:           's'
     formula:        'lambda a, b: a * 256 + b'
@@ -138,6 +153,7 @@ dist_traveled_mil_on:
     mode:           '01'
     pid:            '21'
     bytes:          2
+    lines:          1
     range:          [0, 65535]
     unit:           'km'
     formula:        'lambda a, b: a * 256 + b'
@@ -147,6 +163,7 @@ fuel_rail_pressure_manifold:
     mode:           '01'
     pid:            '22'
     bytes:          2
+    lines:          1
     range:          [0.0, 5177.265]
     unit:           'kPa'
     formula:        'lambda a, b: (a * 256 + b) * 0.079'
@@ -156,6 +173,7 @@ fuel_rail_pressure_direct:
     mode:           '01'
     pid:            '23'
     bytes:          2
+    lines:          1
     range:          [0, 655350]
     unit:           'kPa (gauge)'
     formula:        'lambda a, b: (a * 256 + b) * 10'
@@ -165,6 +183,7 @@ commanded_egr:
     mode:           '01'
     pid:            '2C'
     bytes:          1
+    lines:          1
     range:          [0.0, 100.0]
     unit:           '%'
     formula:        'lambda a: (a * 100) / 255.0'
@@ -174,6 +193,7 @@ egr_error:
     mode:           '01'
     pid:            '2D'
     bytes:          1
+    lines:          1
     range:          [-100.0, 99.22]
     unit:           '%'
     formula:        'lambda a: (a - 128) * 100 / 128.0'
@@ -183,6 +203,7 @@ commanded_evap_purge:
     mode:           '01'
     pid:            '2E'
     bytes:          1
+    lines:          1
     range:          [0.0, 100.0]
     unit:           '%'
     formula:        'lambda a: (a * 100) / 255.0'
@@ -192,6 +213,7 @@ fuel_level_input:
     mode:           '01'
     pid:            '2F'
     bytes:          1
+    lines:          1
     range:          [0.0, 100.0]
     unit:           '%'
     formula:        'lambda a: (a * 100) / 255.0'
@@ -201,6 +223,7 @@ warmups_since_cleared:
     mode:           '01'
     pid:            '30'
     bytes:          1
+    lines:          1
     range:          [0, 255]
     unit:           '#'
     formula:        'lambda a: a'
@@ -210,6 +233,7 @@ dist_traveled_since_cleared:
     mode:           '01'
     pid:            '31'
     bytes:          2
+    lines:          1
     range:          [0, 65535]
     unit:           'km'
     formula:        'lambda a, b: a * 256 + b'
@@ -219,6 +243,7 @@ barometric_pressure:
     mode:           '01'
     pid:            '33'
     bytes:          1
+    lines:          1
     range:          [0, 255]
     unit:           'kPa (absolute)'
     formula:        'lambda a: a'
