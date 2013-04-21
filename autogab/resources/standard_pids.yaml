@@ -29,7 +29,7 @@ st_fuel_b1:
     formula:        'lambda a: (a - 128) * 100.0 / 128.0'
 
 lt_fuel_b1:
-    description:    'Long Term Term Fuel % Trim - Bank 1'
+    description:    'Long Term Fuel % Trim - Bank 1'
     mode:           '01'
     pid:            '07'
     bytes:          1
