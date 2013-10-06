@@ -13,7 +13,7 @@ import pygame as pg
 from autogab.obd import OBDConnectionContext
 
 
-def tachometer(self, device='/dev/ttyUSB0'):
+def tachometer(device='/dev/ttyUSB0'):
     with OBDConnectionContext(device=device) as obd:
         while(True):
             yield obd.request_value('engine_rpm')
