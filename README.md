@@ -9,7 +9,8 @@ Python.
 
 ## Dependencies
 
-Autogab requires [Python] [python] and [pySerial] [pyserial].
+Autogab requires [Python] [python], [pySerial] [pyserial], [PyYAML] [pyyaml],
+and [setuptools] [setuptools].
 
 It is designed to be used with an OBD-II bridge such as the [ELM327] [elm327] or
 the [STN11xx] [stn11xx] family. In particular, it is developed using the [OBD-II
@@ -25,6 +26,8 @@ COPYING for defails).
 
 [python]: http://www.python.org
 [pyserial]: http://pyserial.sourceforge.net
+[pyyaml]: http://pyyaml.org
+[setuptools]: http://pypi.python.org/pypi/setuptools
 [elm327]: http://elmelectronics.com/obdic.html#ELM327
 [stn11xx]: http://www.scantool.net/dev-tools/stn11xx/
 [sfobd]: https://www.sparkfun.com/products/9555
